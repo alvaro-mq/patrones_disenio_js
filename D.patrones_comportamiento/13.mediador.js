@@ -19,3 +19,12 @@ const Emitter = (() => {
 Emitter.on('login', x => console.log(x));
 
 Emitter.emit('login', { user: 'alvaro', password: '123456' });
+
+// Mediador con Nodejs
+const EmitterNodejs = require('events');
+
+const emitter = new EmitterNodejs();
+
+emitter.on('logout', x => console.log(x));
+
+emitter.emit('logout', { user: 'alvaro' });
